@@ -3,4 +3,5 @@
   :url "https://github.com/CSCfi/haka-buddy"
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.8.0"]])
+  :dependencies [[buddy/buddy-auth "1.4.1"]
+                 [org.clojure/clojure "1.8.0"]])
