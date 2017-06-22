@@ -20,5 +20,5 @@
                ;;Hax to fix tomcat double utf-8 encoding problem
                (new String (.getBytes val "ISO-8859-1") "UTF-8")]))))
 
-(defn get-attributes [request env & {:keys [names] :or {names shibbo-attribs}}]
+(defn get-attributes [request env & [{:keys [names] :or {names shibbo-attribs}}]]
   (get-ajp-attributes names request))
