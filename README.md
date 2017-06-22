@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/CSCfi/haka-buddy.svg?branch=master)](https://travis-ci.org/CSCfi/haka-buddy)
 # Introduction
 
 haka-buddy is a Clojure library designed to provide a Haka SP based authentication and authorization backend for Buddy-Auth library. This library provides the features:
