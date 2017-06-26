@@ -15,11 +15,11 @@
     has-id))
 
 (defn shibbo-backend
-  [env & names]
+  [& [names]]
   (reify
     proto/IAuthentication
     (-parse [_ request]
-      (shibbo/get-attributes request env names))
+      (shibbo/get-attributes request names))
     (-authenticate [_ request shib-attribs]
       (let [id
             (when (haka-login-valid? shib-attribs) shib-attribs)]
