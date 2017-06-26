@@ -1,7 +1,7 @@
 (ns haka-buddy.util
   (:import (javax.servlet ServletRequest)))
 
-(def ^:private shibbo-attribs
+(def ^:private default-shibbo-attribs
   ["commonName" "displayName" "eduPersonAffiliation" "eppn" "mail" "surname" "schacHomeOrganization" "schacHomeOrganizationType"])
 
 (def not-blank? (complement clojure.string/blank?))
@@ -10,7 +10,7 @@
   "Extracts attributes from servlet-request.
   Recommended way to pass Shibboleth env vars to JVM is by
   AJP protocol."
-  [names req]
+  [req names]
   (when-let [^ServletRequest request (:servlet-request req)]
       (into {}
             (for [n names
@@ -21,7 +21,5 @@
                (new String (.getBytes val "ISO-8859-1") "UTF-8")]))))
 
 (defn get-attributes [request names]
-  (let [names (if names
-                names
-                shibbo-attribs)]
-    (get-ajp-attributes names request)))
+  (let [names (or names default-shibbo-attribs)]
+    (get-ajp-attributes request names)))
