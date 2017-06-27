@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/CSCfi/haka-buddy.svg?branch=master)](https://travis-ci.org/CSCfi/haka-buddy)
 # Prerequisite
 
-In order to be able to use this library you should have a Shibboleth SP installed and configured appropriately. More information can be found from the [Shibboleth wiki](https://wiki.shibboleth.net/confluence/display/SHIB2)
+In order to be able to use this library you should have a Shibboleth SP installed and configured appropriately. More information can be found from the [Shibboleth wiki](https://wiki.shibboleth.net/confluence/display/SHIB2). You can also benefit from [ansible-role-shibboleth-sp](//github.com/CSCfi/ansible-role-shibboleth-sp) designed at CSC. Please note that the role is still under development and non backward compatible changes may apply.
 
 # Introduction
 
