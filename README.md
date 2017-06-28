@@ -62,3 +62,13 @@ A custom function for validating a valid login can be provided in a similar mann
              (wrap-authentication backend)
              (wrap-authorization backends/authz-backend)))
 ```
+
+In case the attributes are to be provided by the SP through http headers instead of AJP, the ring handler should be wrapped in the following way:
+
+```clojure
+;; Wrap the ring handler.
+(def app (-> my-handler
+             (wrap-authentication (backends/shibbo-backend {:use-headers? true}))
+             ...)
+```
+The default value for `:use-headers` is set to false.
