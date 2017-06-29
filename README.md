@@ -71,4 +71,4 @@ In case the attributes are to be provided by the SP through http headers instead
              (wrap-authentication (backends/shibbo-backend {:use-headers? true}))
              ...)
 ```
-The default value for `:use-headers` is set to false. Note that the attribute names returned by the http headers might differ from those returned by the AJP.
+The default value for `:use-headers?` is set to false. Note that the attribute names returned by the http headers might differ from those returned by the AJP.
