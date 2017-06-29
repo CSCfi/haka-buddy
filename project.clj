@@ -1,4 +1,4 @@
-(defproject haka-buddy "0.1.0"
+(defproject haka-buddy "0.2.0"
   :description "Haka SP based authentication and authorization backend for Buddy-Auth library"
   :url "https://github.com/CSCfi/haka-buddy"
   :license {:name "MIT License"

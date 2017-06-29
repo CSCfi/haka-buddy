@@ -15,11 +15,11 @@
     has-id))
 
 (defn shibbo-backend
-  [& [{:keys [names checkfn] :or {checkfn haka-login-valid?}}]]
+  [& [{:keys [names checkfn use-headers?] :or {checkfn haka-login-valid?}}]]
   (reify
     proto/IAuthentication
     (-parse [_ request]
-      (shibbo/get-attributes request names))
+      (shibbo/get-attributes request names use-headers?))
     (-authenticate [_ request shib-attribs]
       (let [id
             (when (checkfn shib-attribs) shib-attribs)]
