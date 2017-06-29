@@ -3,6 +3,8 @@
 
 In order to be able to use this library you should have a Shibboleth SP installed and configured appropriately. More information can be found from the [Shibboleth wiki](https://wiki.shibboleth.net/confluence/display/SHIB2). You can also benefit from [ansible-role-shibboleth-sp](//github.com/CSCfi/ansible-role-shibboleth-sp) designed at CSC. Please note that the role is still under development and non backward compatible changes may apply.
 
+By default this library will provide attributes through AJP protocol, so make sure to configure the SP appropriately. Alternatively the library can be set to return attributes by HTTP headers with `:use-headers?` functionality.
+
 # Introduction
 
 haka-buddy is a Clojure library designed to provide a Haka SP based authentication and authorization backend for Buddy-Auth library. This library provides the following features:
@@ -44,7 +46,7 @@ The backend could be then setup in the following way:
              (wrap-authorization backends/authz-backend)))
 ```
 
-A custom function for validating a valid login can be provided in a similar manner. The function is expected to return a boolean value. Here is an example of a backend that would let an user login as long as some of the three custom attributes is released by the shibboleth sp:
+A custom function for validating a valid login can be provided in a similar manner. The function is expected to return a boolean value. Here is an example of a backend that would let an user login as long as some of the three custom attributes is released by the shibboleth SP:
 
 ```clojure
 (require '[haka-buddy.backends :as backends])
