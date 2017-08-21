@@ -15,7 +15,7 @@ haka-buddy is a Clojure library designed to provide a Haka SP based authenticati
 
 In order to take haka-buddy into use in a clojure project, simply include the dependency vector in your **project.clj**:
 
-`[haka-buddy "0.1.0"]`
+[![Clojars Project](https://img.shields.io/clojars/v/haka-buddy.svg)](https://clojars.org/haka-buddy)
 
 # Usage
 
