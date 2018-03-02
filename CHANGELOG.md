@@ -1,5 +1,8 @@
 # Change Log
 
+## [0.2.3] - 2018-03-02
+- update clojure version
+
 ## [0.2.2] - 2017-12-22
 - update buddy-auth dependency
 
